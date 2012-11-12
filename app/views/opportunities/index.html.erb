@@ -1,0 +1,32 @@
+<div class="container content">
+  <div class="row">
+    <div class="span12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @opportunities.each do |opportunity| %>
+            <tr>
+              <td><%= opportunity.id %></td>
+              <td><%= opportunity.title %></td>
+              <td><%= opportunity.duration %></td>
+              <td>
+                <% if current_user -%>
+                  <%= link_to 'Join', root_path %>
+                <% else %> 
+                  <%= link_to 'Sign Up', new_user_registration_path %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

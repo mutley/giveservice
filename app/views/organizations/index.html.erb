@@ -1,0 +1,26 @@
+<div class="container content">
+  <div class="row">
+    <div class="span8 leftContent">
+      <h2>Organizations</h2>
+      <table class="table table-bordered table-striped table-spacer">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>&nbsp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @organizations.each do |organization| %>
+            <tr>
+              <td><%= organization.id %></td>
+              <td><%= organization.title %></td>
+              <td>Links</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <%= render "organizations/side_bar" %> 
+  </div>
+</div>

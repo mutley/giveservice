@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="container">
+      <div class="row branding">
+        <div class="span6">
+          <h1 class="pull-left"><%= link_to "giveservice.org", root_path %></h1>
+        </div>                  
+        <div class="span6">
+          <p class="pull-right userInfo"><i class="icon-user"></i> Welcome <strong>Guest!</strong> &nbsp;<%= current_user ? link_to("logout", destroy_user_session_path, method: :delete) : link_to("Please Login", new_user_session_path) %></p>
+        </div>                  
+      </div>
+      <div class="row navigation">
+        <div class="span12">
+        <%= tabs_tag :builder => MenuTabBuilder, open_tabs: {class: 'nav nav-tabs'} do |tab| %>
+          <%= tab.pages          'Home', root_path %>
+          <%= tab.opportunities 'Opportunities', opportunities_path %>
+          <%= tab.organizations 'Organizations', organizations_path %>
+          <%= tab.blog          'Blog', root_path %>
+        <% end %>
+        </div>
+      </div>
+    </div>        
+  </div>
