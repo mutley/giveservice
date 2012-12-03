@@ -6,5 +6,5 @@ class Opportunity < ActiveRecord::Base
   has_many :users, through: :opportunities_users
 
   # Accessible Attributes
-  # attr_accessible :duration, :title
+  attr_accessible :duration, :title
 end

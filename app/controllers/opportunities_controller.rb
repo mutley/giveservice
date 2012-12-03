@@ -10,10 +10,17 @@ class OpportunitiesController < ApplicationController
   end
 
   def new
+    @opportunity = Opportunity.new
 
   end
 
   def create
+    @opportunity = Opportunity.new(params[:opportunity])
+    if @opportunity.save
+      redirect_to opportunities_path
+    else
+      render :new
+    end
 
   end
 

@@ -1,9 +1,10 @@
 <div class="span4 sidebar">
 <% if current_user -%>
-  <h2><%= link_to "Create an Organization", new_organization_path, html_options = { class: "btn btn-large btn-success" } %></h2>
+  <h2><%= link_to "Create Opportunity", new_opportunity_path, html_options = { class: "btn btn-large btn-success" } %></h2>
 <% else%>
+  <h2><%= link_to "Get an account now", new_user_registration_path, html_options = { class: "btn btn-large btn-warning" } %></h2>
 <% end %>
-<%= render "layouts/quick-sign-up" %>
+  <%= render "layouts/quick-sign-up" %>
   <h3>Where do i go from here?</h3>
   <p>
     Nullam quis risus eget urna <a href="#">mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes.
